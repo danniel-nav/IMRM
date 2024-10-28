@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Académico - Instituto Miguel Rafael Madrid</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/academico.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="img/logo.png" alt="Logo Instituto" class="logo">
+            <h1>Instituto Miguel Rafael Madrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="academico.html" class="active">Académico</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><button class="btn-prematricula" onclick="mostrarPrematricula()">Prematrícula</button></li>
+                <!-- Separador de estilo -->
+                <div class="nav-spacer"></div>
+    
+                <!-- Botón de admin -->
+                <a href="login.html" class="admin-login">
+                    <i class="fas fa-user"></i> <!-- Si usas Font Awesome -->
+                    Admin
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="academico-container">
+        <h2 class="main-title">Oferta Académica</h2>
+        <p class="intro-text">En el Instituto Miguel Rafael Madrid ofrecemos diferentes modalidades educativas diseñadas para preparar a nuestros estudiantes para su futuro profesional.</p>
+
+        <div class="modalidades">
+            <!-- BTPCF -->
+            <section class="modalidad-card">
+                <div class="modalidad-imagen">
+                    <img src="img/btpcf.jpg" alt="Bachillerato Técnico Profesional en Contaduría y Finanzas">
+                </div>
+                <div class="modalidad-contenido">
+                    <h3>Bachillerato Técnico Profesional en Contaduría y Finanzas (BTPCF)</h3>
+                    <p class="descripcion">Forma profesionales capacitados en el área contable y financiera, preparados para el mundo empresarial moderno.</p>
+                    <h4>Perfil del Graduado:</h4>
+                    <ul>
+                        <li>Manejo de sistemas contables</li>
+                        <li>Análisis financiero</li>
+                        <li>Gestión tributaria</li>
+                        <li>Administración empresarial</li>
+                        <li>Emprendimiento</li>
+                    </ul>
+                    <div class="duracion">Duración: 3 años (10° a 12° grado)</div>
+                </div>
+            </section>
+
+            <!-- BTPI -->
+            <section class="modalidad-card">
+                <div class="modalidad-imagen">
+                    <img src="img/btpi.jpg" alt="Bachillerato Técnico Profesional en Informática">
+                </div>
+                <div class="modalidad-contenido">
+                    <h3>Bachillerato Técnico Profesional en Informática (BTPI)</h3>
+                    <p class="descripcion">Prepara profesionales en el área de tecnología de la información, capaces de desarrollar soluciones tecnológicas innovadoras.</p>
+                    <h4>Perfil del Graduado:</h4>
+                    <ul>
+                        <li>Programación y desarrollo de software</li>
+                        <li>Mantenimiento de hardware y redes</li>
+                        <li>Diseño web</li>
+                        <li>Gestión de bases de datos</li>
+                        <li>Soporte técnico</li>
+                    </ul>
+                    <div class="duracion">Duración: 3 años (10° a 12° grado)</div>
+                </div>
+            </section>
+
+            <!-- BCH -->
+            <section class="modalidad-card">
+                <div class="modalidad-imagen">
+                    <img src="img/bch.jpg" alt="Bachillerato en Ciencias y Humanidades">
+                </div>
+                <div class="modalidad-contenido">
+                    <h3>Bachillerato en Ciencias y Humanidades (BCH)</h3>
+                    <p class="descripcion">Ofrece una formación integral en ciencias y humanidades, preparando a los estudiantes para continuar estudios universitarios.</p>
+                    <h4>Áreas de Enfoque:</h4>
+                    <ul>
+                        <li>Ciencias naturales y matemáticas</li>
+                        <li>Literatura y comunicación</li>
+                        <li>Ciencias sociales</li>
+                        <li>Investigación</li>
+                        <li>Pensamiento crítico</li>
+                    </ul>
+                    <div class="duracion">Duración: 2 años (10° y 11° grado)</div>
+                </div>
+            </section>
+        </div>
+
+        <section class="requisitos">
+            <h3>Requisitos de Admisión</h3>
+            <ul>
+                <li>Certificado de estudios de 9° grado</li>
+                <li>Partida de nacimiento</li>
+                <li>Fotografía reciente</li>
+                <li>Copia de identidad o certificado de nacimiento</li>
+                <li>Constancia de buena conducta</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Instituto Miguel Rafael Madrid - Catacamas, Olancho</p>
+    </footer>
+
+    <!-- Modal de Prematrícula (una sola vez) -->
+    <div id="modalPrematricula" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2>Prematrícula Estudiantil</h2>
+            
+            <div id="paso1" class="paso-form">
+                <h3>Datos del Estudiante</h3>
+                <form id="formEstudiante">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Paterno:</label>
+                        <input type="text" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Materno:</label>
+                        <input type="text" name="apellidoMaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dni" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <select name="sexo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Centro de Procedencia:</label>
+                        <input type="text" name="centroProcedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado al que aplica:</label>
+                        <select name="grado" onchange="actualizarModalidades()" required>
+                            <option value="">Seleccione...</option>
+                            <option value="7">7° grado</option>
+                            <option value="8">8° grado</option>
+                            <option value="9">9° grado</option>
+                            <option value="10">10° grado</option>
+                            <option value="11">11° grado</option>
+                            <option value="12">12° grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidad:</label>
+                        <select name="modalidad" required>
+                            <option value="">Seleccione el grado primero</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="siguientePaso()" class="btn-siguiente">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div id="paso2" class="paso-form" style="display: none;">
+                <h3>Datos del Padre/Madre/Encargado</h3>
+                <form id="formEncargado" onsubmit="generarPDF(event)">
+                    <div class="form-group">
+                        <label>Tipo de Encargado:</label>
+                        <select name="tipoEncargado" required>
+                            <option value="">Seleccione...</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="encargado">Encargado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" name="nombreEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dniEncargado" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefonoEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccionEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ocupación:</label>
+                        <input type="text" name="ocupacionEncargado" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="pasoAnterior()" class="btn-anterior">Anterior</button>
+                        <button type="submit" class="btn-prematricular">Prematricular</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script (una sola vez) -->
+    <script src="js/main.js"></script>
+</body>
+</html>

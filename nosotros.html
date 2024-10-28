@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Instituto Miguel Rafael Madrid</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="img/logo.png" alt="Logo Instituto" class="logo">
+            <h1>Instituto Miguel Rafael Madrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                <li><a href="academico.html">Académico</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><button class="btn-prematricula" onclick="mostrarPrematricula()">Prematrícula</button></li>
+                <!-- Separador de estilo -->
+                <div class="nav-spacer"></div>
+    
+                <!-- Botón de admin -->
+                <a href="login.html" class="admin-login">
+                    <i class="fas fa-user"></i> <!-- Si usas Font Awesome -->
+                    Admin
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="nosotros-container">
+        <!-- Misión y Visión -->
+        <section class="mision-vision">
+            <div class="card">
+                <h2>Misión</h2>
+                <p>Formar estudiantes integrales con excelencia académica y valores éticos, capaces de contribuir al desarrollo de Catacamas y Honduras, mediante una educación innovadora y comprometida con la comunidad.</p>
+            </div>
+            <div class="card">
+                <h2>Visión</h2>
+                <p>Ser reconocidos como una institución educativa líder en Olancho, destacada por la formación de profesionales competentes, innovadores y con sólidos valores morales, que contribuyan al desarrollo sostenible de nuestra región.</p>
+            </div>
+        </section>
+
+        <!-- Personal Administrativo -->
+        <section class="personal-section">
+            <h2>Personal Administrativo</h2>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <h3>Directora</h3>
+                    <p>Licda. Rita Rodriguez</p>
+                </div>
+                <div class="personal-card">
+                    <h3>Subdirectora</h3>
+                    <p>Licda. Keidy Mariela Ramos</p>
+                    <p>Licda. Yadira no se que</p>
+                
+                </div>
+                
+                <div class="personal-card">
+                    <h3>Orientadora</h3>
+                    <p>Licda. Vanessa Barahona</p>
+                </div>
+                <div class="personal-card">
+                    <h3>Secretaria</h3>
+                    <p>Licda. Patricia no se</p>
+                </div>
+                <div class="personal-card">
+                    <h3>Administradora</h3>
+                    <p>Licda. Carmen Lucila Mejía</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Docente -->
+        <section class="personal-section">
+            <h2>Personal Docente</h2>
+            
+            <h3 class="area-titulo">Departamento de Español</h3>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <p>Licda. Fabiola Suazo</p>
+                    
+                </div>
+                <div class="personal-card">
+                    <p>Licda. Elga Dictina Mejía</p>
+                </div>
+            </div>
+
+            <h3 class="area-titulo">Departamento de Matemáticas</h3>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <p>Lic. Juan Fernando Barahona</p>
+                    
+                </div>
+                <div class="personal-card">
+                    <p>Licda. Blanca Sarahí Pacheco</p>
+                </div>
+                <div class="personal-card">
+                    <p>Lic. Fernando Antonio Castro</p>
+                </div>
+            </div>
+
+            <h3 class="area-titulo">Departamento de Ciencias Naturales</h3>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <p>Licda. Tarcila Maldonado</p>
+                    
+                </div>
+                <div class="personal-card">
+                    <p>Licda. Carolina Duarte</p>
+                </div>
+                <div class="personal-card">
+                    <p>Licda. Eva Suazo</p>
+                </div>
+                <div class="personal-card">
+                    <p>Lic. Alejandro Martinez</p>
+                    <small>Asistente de laboratorio</small>
+                </div>
+            </div>
+
+            <h3 class="area-titulo">Departamento de Estudios Sociales</h3>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <p>Lic. Francisco Árias</p>
+                    
+                </div>
+                <div class="personal-card">
+                    <p>Licda. Wendy lily Escobar </p>
+                </div>
+                <div class="personal-card">
+                    <p>Lic. Roque Ayala</p>
+                </div>
+            </div>
+
+            <h3 class="area-titulo">Otros Departamentos</h3>
+            <div class="personal-grid">
+                <div class="personal-card">
+                    <h4>Inglés</h4>
+                    <p>Lic. Zenia Ruth Figueroa</p>
+                </div>
+                <div class="personal-card">
+                    <h4>Educación Física</h4>
+                    <p>Lic. Marvin José Flores</p>
+                </div>
+                <div class="personal-card">
+                    <h4>Artes</h4>
+                    <p>Lic. Didier Osorio</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Instituto Miguel Rafael Madrid - Catacamas, Olancho</p>
+    </footer>
+
+    <!-- Modal de Prematrícula -->
+    <div id="modalPrematricula" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2>Prematrícula Estudiantil</h2>
+            
+            <div id="paso1" class="paso-form">
+                <h3>Datos del Estudiante</h3>
+                <form id="formEstudiante">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Paterno:</label>
+                        <input type="text" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Materno:</label>
+                        <input type="text" name="apellidoMaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dni" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <select name="sexo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Centro de Procedencia:</label>
+                        <input type="text" name="centroProcedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado al que aplica:</label>
+                        <select name="grado" onchange="actualizarModalidades()" required>
+                            <option value="">Seleccione...</option>
+                            <option value="7">7° grado</option>
+                            <option value="8">8° grado</option>
+                            <option value="9">9° grado</option>
+                            <option value="10">10° grado</option>
+                            <option value="11">11° grado</option>
+                            <option value="12">12° grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidad:</label>
+                        <select name="modalidad" required>
+                            <option value="">Seleccione el grado primero</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="siguientePaso()" class="btn-siguiente">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div id="paso2" class="paso-form" style="display: none;">
+                <h3>Datos del Padre/Madre/Encargado</h3>
+                <form id="formEncargado" onsubmit="generarPDF(event)">
+                    <div class="form-group">
+                        <label>Tipo de Encargado:</label>
+                        <select name="tipoEncargado" required>
+                            <option value="">Seleccione...</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="encargado">Encargado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" name="nombreEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dniEncargado" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefonoEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccionEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ocupación:</label>
+                        <input type="text" name="ocupacionEncargado" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="pasoAnterior()" class="btn-anterior">Anterior</button>
+                        <button type="submit" class="btn-prematricular">Prematricular</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

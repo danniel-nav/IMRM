@@ -1,0 +1,101 @@
+/* Estilos para las imágenes y contenido de la feria tecnológica */
+.imagen-principal {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.img-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.proyecto-card {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.proyecto-card.reverse {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.proyecto-imagen {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-proyecto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-proyecto:hover {
+    transform: scale(1.05);
+}
+
+.proyecto-info h3 {
+    color: #1a47b8;
+    margin-bottom: 1rem;
+}
+
+.proyecto-info ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.proyecto-info li {
+    margin-bottom: 0.5rem;
+}
+
+.logros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.logro-card {
+    background: #f0f4ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.agradecimientos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.agradecimientos li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .proyecto-card,
+    .proyecto-card.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto-imagen {
+        height: 200px;
+    }
+
+    .imagen-principal {
+        height: 250px;
+    }
+}

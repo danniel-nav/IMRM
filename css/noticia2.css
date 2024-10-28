@@ -1,0 +1,98 @@
+/* Estilos adicionales para la página de olimpiadas */
+.banner-victoria {
+    background: #1a47b8;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.banner-victoria h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.estudiantes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.estudiante-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.estudiante-card h3 {
+    color: #1a47b8;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #1a47b8;
+    padding-bottom: 0.5rem;
+}
+
+.estudiante-card ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.estudiante-card li {
+    margin-bottom: 0.5rem;
+}
+
+.competencia-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.info-card {
+    background: #f0f4ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    color: #1a47b8;
+    margin-bottom: 1rem;
+}
+
+.mensaje-director {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-left: 4px solid #1a47b8;
+    margin: 2rem 0;
+}
+
+.mensaje-director blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.mensaje-director footer {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.preparacion-contenido ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .banner-victoria h2 {
+        font-size: 1.5rem;
+    }
+
+    .estudiantes-grid,
+    .competencia-info {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<!--sassad-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Miguel Rafael Madrid</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+   
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="img/logo.png" alt="Logo Instituto" class="logo">
+            <h1>Instituto Miguel Rafael Madrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="academico.html">Académico</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><button class="btn-prematricula" onclick="mostrarPrematricula()">Prematrícula</button></li>
+                <!-- Separador de estilo -->
+                <div class="nav-spacer"></div>
+    
+                <!-- Botón de admin -->
+                <a href="login.html" class="admin-login">
+                    <i class="fas fa-user"></i> <!-- Si usas Font Awesome -->
+                    Admin
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner con imagen del colegio -->
+        <div class="banner">
+            <img src="img/colegio.png" alt="Instituto Miguel Rafael Madrid">
+        </div>
+
+        <!-- Sección de noticias y eventos -->
+        <section class="noticias">
+            <h2>Noticias y Eventos</h2>
+            
+            <article class="noticia-card">
+                <h3>Inicio de Prematrícula 2025</h3>
+                <p class="fecha">22 de Octubre, 2024</p>
+                <p>¡Abrimos nuestro período de prematrícula para el año académico 2025! No pierdas tu cupo en nuestra institución.</p>
+                <button class="btn-leer-mas" onclick="window.location.href='noticias/noticia1.html'">Leer más</button>
+            </article>
+
+            <article class="noticia-card">
+                <h3>Éxito en Olimpiadas de Matemáticas</h3>
+                <p class="fecha">20 de Octubre, 2024</p>
+                <p>Nuestros estudiantes obtuvieron el primer lugar en las olimpiadas regionales de matemáticas.</p>
+                <button class="btn-leer-mas" onclick="window.location.href='noticias/noticia2.html'">Leer más</button>
+            </article>
+
+            <article class="noticia-card">
+                <h3>Feria Tecnológica 2024</h3>
+                <p class="fecha">18 de Octubre, 2024</p>
+                <p>Los estudiantes de BTPI presentaron sus proyectos innovadores en la feria tecnológica anual.</p>
+                <button class="btn-leer-mas" onclick="window.location.href='noticias/noticia3.html'">Leer más</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Instituto Miguel Rafael Madrid - Catacamas, Olancho</p>
+    </footer>
+
+    <!-- Modal de Prematrícula (solo una vez) -->
+    <div id="modalPrematricula" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2>Prematrícula Estudiantil</h2>
+            
+            <div id="paso1" class="paso-form">
+                <h3>Datos del Estudiante</h3>
+                <form id="formEstudiante">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Paterno:</label>
+                        <input type="text" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Materno:</label>
+                        <input type="text" name="apellidoMaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dni" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <select name="sexo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Centro de Procedencia:</label>
+                        <input type="text" name="centroProcedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado al que aplica:</label>
+                        <select name="grado" onchange="actualizarModalidades()" required>
+                            <option value="">Seleccione...</option>
+                            <option value="7">7° grado</option>
+                            <option value="8">8° grado</option>
+                            <option value="9">9° grado</option>
+                            <option value="10">10° grado</option>
+                            <option value="11">11° grado</option>
+                            <option value="12">12° grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidad:</label>
+                        <select name="modalidad" required>
+                            <option value="">Seleccione el grado primero</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="siguientePaso()" class="btn-siguiente">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div id="paso2" class="paso-form" style="display: none;">
+                <h3>Datos del Padre/Madre/Encargado</h3>
+                <form id="formEncargado" onsubmit="generarPDF(event)">
+                    <div class="form-group">
+                        <label>Tipo de Encargado:</label>
+                        <select name="tipoEncargado" required>
+                            <option value="">Seleccione...</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="encargado">Encargado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" name="nombreEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dniEncargado" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefonoEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccionEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ocupación:</label>
+                        <input type="text" name="ocupacionEncargado" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="pasoAnterior()" class="btn-anterior">Anterior</button>
+                        <button type="submit" class="btn-prematricular">Prematricular</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!---------------------------------------------------------->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Iniciar Sesión</h2>
+          <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Ingresar</button>
+          </form>
+        </div>
+      </div>
+<!---------------------------------------------------------->
+    <!-- Script (solo una vez) -->
+    <script src="js/main.js"></script>
+</body>
+</html>

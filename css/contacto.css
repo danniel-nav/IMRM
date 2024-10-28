@@ -1,0 +1,215 @@
+/* Estilos para la página de contacto */
+.contacto-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.main-title {
+    color: #1e40af;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #1e40af;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Estilos para la información de contacto */
+.info-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    color: #1e40af;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item h4 {
+    color: #2563eb;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* Iconos decorativos */
+.icon-ubicacion::before {
+    content: "📍";
+}
+
+.icon-telefono::before {
+    content: "📞";
+}
+
+.icon-email::before {
+    content: "✉️";
+}
+
+.icon-horario::before {
+    content: "🕒";
+}
+
+/* Redes Sociales */
+.redes-sociales {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.redes-sociales h3 {
+    color: #1e40af;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.redes-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.red-social {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.red-social:hover {
+    opacity: 0.9;
+}
+
+.facebook {
+    background-color: #1877f2;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+/* Formulario de Contacto */
+.form-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h3 {
+    color: #1e40af;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #4b5563;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.btn-enviar {
+    background-color: #1e40af;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-size: 16px;
+}
+
+.btn-enviar:hover {
+    background-color: #1e3a8a;
+}
+
+/* Sección de Ubicación */
+.ubicacion-section {
+    margin-top: 40px;
+}
+
+.ubicacion-section h3 {
+    color: #1e40af;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mapa-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .redes-icons {
+        flex-wrap: wrap;
+    }
+
+    .red-social {
+        width: 100%;
+        text-align: center;
+    }
+}

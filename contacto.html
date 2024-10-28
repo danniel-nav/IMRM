@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Instituto Miguel Rafael Madrid</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="img/logo.png" alt="Logo Instituto" class="logo">
+            <h1>Instituto Miguel Rafael Madrid</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="academico.html">Académico</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><button class="btn-prematricula" onclick="mostrarPrematricula()">Prematrícula</button></li>
+                <!-- Separador de estilo -->
+                <div class="nav-spacer"></div>
+    
+                <!-- Botón de admin -->
+                <a href="login.html" class="admin-login">
+                    <i class="fas fa-user"></i> <!-- Si usas Font Awesome -->
+                    Admin
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contacto-container">
+        <h2 class="main-title">Contáctenos</h2>
+
+        <div class="contacto-grid">
+            <!-- Información de Contacto -->
+            <section class="info-contacto">
+                <div class="info-card">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <i class="icon-ubicacion"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Barrio El Centro, Catacamas, Olancho</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-telefono"></i>
+                        <div>
+                            <h4>Teléfonos</h4>
+                            <p>+504 2785-1234</p>
+                            <p>+504 2785-5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-email"></i>
+                        <div>
+                            <h4>Correo Electrónico</h4>
+                            <p>info@institutomrm.edu.hn</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="icon-horario"></i>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 7:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="redes-sociales">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <div class="redes-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567670001967&mibextid=ZbWKwL" class="red-social facebook">Facebook</a>
+                        <a href="#" class="red-social twitter">Twitter</a>
+                        <a href="https://www.instagram.com/instituto_miguel_rafael_madrid/?utm_source=ig_web_button_share_sheet" class="red-social instagram">Instagram</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de Contacto -->
+            <section class="form-contacto">
+                <div class="form-card">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form id="contactForm" onsubmit="enviarMensaje(event)">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Seleccione un asunto</option>
+                                <option value="informacion">Información General</option>
+                                <option value="matricula">Proceso de Matrícula</option>
+                                <option value="academico">Consulta Académica</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <section class="ubicacion-section">
+            <h3>Nuestra Ubicación</h3>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.5108060412856!2d-85.88664100633679!3d14.84632496881413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6c7256e1d10d35%3A0xa9f4fd0b5d0e2535!2sInstituto%20Miguel%20Rafael%20Madrid!5e0!3m2!1ses-419!2shn!4v1729872833055!5m2!1ses-419!2shn" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Instituto Miguel Rafael Madrid - Catacamas, Olancho</p>
+    </footer>
+
+    <!-- Modal de Prematrícula (solo una vez) -->
+    <div id="modalPrematricula" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2>Prematrícula Estudiantil</h2>
+            
+            <div id="paso1" class="paso-form">
+                <h3>Datos del Estudiante</h3>
+                <form id="formEstudiante">
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Paterno:</label>
+                        <input type="text" name="apellidoPaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido Materno:</label>
+                        <input type="text" name="apellidoMaterno" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dni" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento:</label>
+                        <input type="date" name="fechaNacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo:</label>
+                        <select name="sexo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Centro de Procedencia:</label>
+                        <input type="text" name="centroProcedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Grado al que aplica:</label>
+                        <select name="grado" onchange="actualizarModalidades()" required>
+                            <option value="">Seleccione...</option>
+                            <option value="7">7° grado</option>
+                            <option value="8">8° grado</option>
+                            <option value="9">9° grado</option>
+                            <option value="10">10° grado</option>
+                            <option value="11">11° grado</option>
+                            <option value="12">12° grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidad:</label>
+                        <select name="modalidad" required>
+                            <option value="">Seleccione el grado primero</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="siguientePaso()" class="btn-siguiente">Siguiente</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div id="paso2" class="paso-form" style="display: none;">
+                <h3>Datos del Padre/Madre/Encargado</h3>
+                <form id="formEncargado" onsubmit="generarPDF(event)">
+                    <div class="form-group">
+                        <label>Tipo de Encargado:</label>
+                        <select name="tipoEncargado" required>
+                            <option value="">Seleccione...</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="encargado">Encargado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" name="nombreEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input type="text" name="dniEncargado" pattern="[0-9]{13}" title="DNI debe tener 13 dígitos" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" name="telefonoEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección:</label>
+                        <input type="text" name="direccionEncargado" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ocupación:</label>
+                        <input type="text" name="ocupacionEncargado" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" onclick="pasoAnterior()" class="btn-anterior">Anterior</button>
+                        <button type="submit" class="btn-prematricular">Prematricular</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function enviarMensaje(event) {
+            event.preventDefault();
+            // Aquí iría la lógica para enviar el mensaje
+            alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
